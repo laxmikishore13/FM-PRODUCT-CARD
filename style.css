@@ -1,0 +1,151 @@
+/* General styles */
+:root {
+  --color-cream: #f3e5d7;
+  --color-green: #40826d;
+  --color-gunmetal: #2c3539;
+  --color-lightgray: #6e7f80;
+  --color-deep: #1a4032;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Fraunces", sans-serif;
+}
+
+p,
+button {
+  font-family: "Montserrat", sans-serif;
+  color: var(--color-lightgray);
+}
+
+body {
+  background-color: var(--color-cream);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Article (Product Card) Container */
+article {
+  width: 600px;
+  height: 450px;
+  display: flex;
+  flex-direction: row; /* Keep elements side-by-side for large screens */
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+/* Picture (Product Image) */
+picture img {
+  height: 100%; /* Fill the height of the container */
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+/* Product Details */
+.product {
+  width: 50%; /* Take 50% of the available width */
+  padding: 32px;
+  gap: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-header p {
+  letter-spacing: 5px;
+  margin-bottom: 20px;
+  font-size: 12px;
+  color: var(--color-lightgray);
+}
+
+.product-header h1 {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--color-gunmetal);
+  margin: 0;
+}
+
+.product-info {
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.product-details {
+  gap: 30px;
+}
+
+.product-amount-details {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+}
+
+[data-cell="amount"] {
+  font-family: "Fraunces", sans-serif;
+  font-size: 32px;
+  color: var(--color-green);
+  font-weight: 700;
+}
+
+[data-cell="price"] {
+  font-size: 13px;
+  text-decoration: line-through;
+  color: var(--color-lightgray);
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background: var(--color-green);
+  color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button img {
+  width: 14px;
+}
+
+button:hover {
+  background-color: var(--color-deep);
+}
+
+/* Mobile Layout */
+@media screen and (max-width: 768px) {
+  article {
+    width: 100%;
+    max-width: 343px;
+    height: auto;
+    flex-direction: column; /* Stack elements vertically on mobile */
+  }
+
+  picture img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .product {
+    padding: 24px;
+    width: 100%;
+  }
+}
